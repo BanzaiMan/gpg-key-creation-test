@@ -1,5 +1,6 @@
 language: ruby
 
+
 script:
   - sudo apt-get install haveged
   - sudo service haveged start
