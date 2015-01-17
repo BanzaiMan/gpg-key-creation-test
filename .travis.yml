@@ -1,6 +1,6 @@
 language: ruby
 
+sudo: false
+
 script:
-  - sudo apt-get install haveged
-  - sudo service haveged start
   - time sudo -E ./test
