@@ -6,10 +6,10 @@ USERNAME="$(logname)"
 
 WHONIX_LOCAL_SIGNING_KEY_FOLDER="/home/$USERNAME/gpg-test"
 
-sudo -E -u "$USERNAME" mkdir --parents "$WHONIX_LOCAL_SIGNING_KEY_FOLDER"
+mkdir --parents "$WHONIX_LOCAL_SIGNING_KEY_FOLDER"
 
 ## chmod 700, so gpg will not complain about folder permissions
-sudo -E -u "$USERNAME" chmod 700 "$WHONIX_LOCAL_SIGNING_KEY_FOLDER"
+chmod 700 "$WHONIX_LOCAL_SIGNING_KEY_FOLDER"
 
 ## http://www.gnupg.org/documentation/manuals/gnupg-devel/Unattended-GPG-key-generation.html
 
@@ -22,7 +22,7 @@ echo "
    Name-Email: whonix@local-signing.key
    Expire-Date: 0
    Preferences: SHA512 SHA384 SHA256 SHA224 AES256 AES192 AES CAST5 ZLIB BZIP2 ZIP Uncompressed
-" | sudo -E -u "$USERNAME" gpg \
+" | gpg \
 --no-default-keyring \
 --homedir "$WHONIX_LOCAL_SIGNING_KEY_FOLDER" \
 --batch \
