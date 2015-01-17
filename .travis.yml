@@ -3,4 +3,4 @@ language: ruby
 sudo: false
 
 script:
-  - time sudo -E ./test
+  - time ./test
